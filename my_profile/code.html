@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#c8e6ff",
+                    "tertiary-fixed-dim": "#a3cbea",
+                    "primary-container": "#630d16",
+                    "inverse-on-surface": "#ffedeb",
+                    "inverse-surface": "#392e2d",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "on-primary-fixed-variant": "#82252a",
+                    "on-secondary-fixed": "#001b3d",
+                    "outline": "#897170",
+                    "surface-container-highest": "#f2dedd",
+                    "background": "#fff8f7",
+                    "primary": "#410007",
+                    "on-primary": "#ffffff",
+                    "on-background": "#231919",
+                    "surface-container-low": "#fff0ef",
+                    "secondary": "#465f88",
+                    "tertiary-container": "#00344d",
+                    "on-tertiary-fixed": "#001e2f",
+                    "surface-tint": "#a13c3f",
+                    "on-tertiary-fixed-variant": "#204b65",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#b6d0ff",
+                    "surface-container-high": "#f8e4e2",
+                    "surface-dim": "#e9d6d4",
+                    "surface-variant": "#f2dedd",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#dcc0bf",
+                    "on-surface-variant": "#564241",
+                    "secondary-fixed": "#d6e3ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#759dba",
+                    "primary-fixed": "#ffdad8",
+                    "surface": "#fff8f7",
+                    "secondary-fixed-dim": "#aec7f7",
+                    "surface-container": "#fde9e8",
+                    "on-secondary-fixed-variant": "#2e476f",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#3f5881",
+                    "on-primary-fixed": "#410007",
+                    "on-surface": "#231919",
+                    "tertiary": "#001e2f",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#ffb3b1",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#eb7475",
+                    "surface-bright": "#fff8f7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "16px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff8f7;
+        }
+        .profile-header-gradient {
+            background: linear-gradient(180deg, rgba(65,0,7,0.8) 0%, rgba(65,0,7,0.2) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full border border-outline-variant" data-alt="A professional headshot of a senior executive in a corporate setting. The lighting is soft and natural, emphasizing a confident and approachable expression. The style is modern and high-resolution, suitable for a premium business networking platform with a color palette of subtle warm tones and deep red accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVRI2Yv7XDoW1xyHLOYwBUA5ldw_uleKpK2xnoMaK2dWQcFO9b0elwsU5qd2b342eTcpNHNHzla0yeY5fX8gOfmNxbAJxI8qKoCSvF9RmseRZpgDuVXv59I0EmRux1mXK71uI78erub0V05bSOloWTi56y61D7BO_4joo9eMyJKdTBKHrPwFWD6fmIfRvI0oHnw2Bx8p4HLChO68WKt5yo1jqBAnfHwRpvpGkW15s2QxX4C4Bru1_2rrMPIud2dETQq0Uf_xCHXfg"/>
+<span class="text-xl font-black text-red-900 dark:text-red-500 font-sans tracking-tight">ExecutiveHub</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-gray-500 hover:bg-gray-50 p-2 rounded-full transition-colors duration-200" data-icon="search">search</button>
+<button class="material-symbols-outlined text-gray-500 hover:bg-gray-50 p-2 rounded-full transition-colors duration-200" data-icon="notifications">notifications</button>
+</div>
+</header>
+<main class="pt-16 pb-24 max-w-[1200px] mx-auto">
+<!-- Profile Header Section -->
+<section class="relative">
+<!-- Cover Photo -->
+<div class="h-48 md:h-64 w-full relative overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover opacity-60" data-alt="A panoramic view of a modern glass skyscraper reflecting a clear blue sky during sunset. The image has a sophisticated corporate aesthetic, using deep crimson and navy blue tones to match the ExecutiveHub branding. The atmosphere is ambitious and professional, capturing the essence of strategic urban architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCShel3DplpFmpMx8foX14yV-JOCDw4v8hfnCitonDrsnQ9GDJh-YSo8GPYRlTSwUb-i4gHng9Nwth-ZepGgADlpSVOyJgFX3XQec5CS5JLkeZOlnTPK6ALsmYXhzsgTsnSh1Pkja7k2OZFUQ7ouqspBB5LnRTqro56GV8URl8aHnoImr-HfShfbRPIV9YXc_qZFgdhfPmX2sBswjiR9lMhdldrvcKPrbtqknAzp_gXEvA-oUKQwgjC3ehR_DZUGPTkBRpxMU8WudM"/>
+<div class="absolute inset-0 profile-header-gradient"></div>
+</div>
+<!-- Profile Info Container -->
+<div class="px-container-margin -mt-16 relative z-10 md:px-xl">
+<div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+<div class="flex flex-col items-start">
+<div class="p-1 bg-white rounded-full shadow-lg">
+<img class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white object-cover" data-alt="A high-quality portrait of Alex Sterling, a senior director in his late 40s with a professional and welcoming demeanor. He is wearing a charcoal suit with a crisp white shirt. The background is a blurred office environment with soft lighting, emphasizing his leadership role within the corporate hub ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvG6auZDv-Z0bkj-_Hml1_powFJMtYxpAVw4cfDiUMWhNWHkyMjP_B4fqfS-HGcvu_J9fom7f6R4TTZWWLttH9ggogzxKdyw6wkg3Qx3g0Krk8EkQ0tvJhfu-V7ivJ_gZcjQ5cTTyfRq89GDr4oQltIZPwgZF6smBVORtpj41NfBKHYyPKtIlsiDhh3cTmf99RNx04x4iI2X7TEzA13OaZZQ4lAfyv95HCQKLHhJVoVxzahJR2YQjRCWARgXQsML04tigLDXM6Ecs"/>
+</div>
+<div class="mt-4">
+<h1 class="font-display-lg text-on-surface text-display-lg">Alex Sterling</h1>
+<p class="font-body-lg text-secondary text-body-lg">Senior Director, Strategy &amp; Ops</p>
+<div class="flex items-center gap-2 mt-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+                                New York, NY
+                                <span class="mx-1">•</span>
+<span class="text-primary font-bold">500+ Connections</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2 mb-2">
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold shadow-md hover:brightness-110 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="person_add" data-weight="fill">person_add</span>
+                            Connect
+                        </button>
+<button class="border border-secondary text-secondary px-6 py-2 rounded-full font-bold hover:bg-secondary-container/10 transition-all">
+                            Message
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="px-container-margin mt-lg grid grid-cols-2 md:grid-cols-4 gap-sm">
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container-highest flex flex-col items-center justify-center text-center">
+<span class="text-display-md text-primary font-display-md">142</span>
+<span class="text-label-md text-on-surface-variant font-label-md uppercase tracking-wider">Posts</span>
+</div>
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container-highest flex flex-col items-center justify-center text-center">
+<span class="text-display-md text-primary font-display-md">867</span>
+<span class="text-label-md text-on-surface-variant font-label-md uppercase tracking-wider">Connections</span>
+</div>
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container-highest flex flex-col items-center justify-center text-center">
+<span class="text-display-md text-primary font-display-md">24</span>
+<span class="text-label-md text-on-surface-variant font-label-md uppercase tracking-wider">Awards</span>
+</div>
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container-highest flex flex-col items-center justify-center text-center">
+<span class="text-display-md text-primary font-display-md">12.5k</span>
+<span class="text-label-md text-on-surface-variant font-label-md uppercase tracking-wider">Reach</span>
+</div>
+</section>
+<!-- Main Content Area: Feed and Sidebar -->
+<div class="px-container-margin mt-lg flex flex-col md:flex-row gap-lg">
+<!-- Feed (Left Column) -->
+<div class="flex-1 space-y-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Recent Activity</h3>
+<!-- Post Card 1 -->
+<article class="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container-highest overflow-hidden">
+<div class="p-md">
+<div class="flex items-center gap-3 mb-md">
+<img class="w-10 h-10 rounded-full border border-outline-variant" data-alt="Small thumbnail of Alex Sterling, focusing on his professional attire and calm expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAF_WMJRlptgtgka5VAeiQWXmEukztiTjULxaLjifbwEVGk-fKN9Rwdz5JNJczYA0BCYyhUb-lZc6grCZRz-FR4vMB4ZDAqcx5crEoZULcJ2unBEBeICvobUyjVZm9Pawm-2Qx13oRfGMUU49TY1yhVHjK_1O6JXazprmw0HOXxAdJ4UyMdPdfBUOqDteZIFb_5tp7m5FYxpPkDt3NGY8EeUyk1e7IsjOiSZukrZOFJJZis1LvR7A1g70TWRW70J4P60Ekqlk_8dio"/>
+<div>
+<h4 class="font-label-md text-on-surface font-bold">Alex Sterling</h4>
+<p class="text-label-sm text-on-surface-variant">2 hours ago • <span class="material-symbols-outlined text-[12px] align-middle" data-icon="public">public</span></p>
+</div>
+</div>
+<p class="font-body-md text-on-surface mb-md">
+                            Thrilled to announce that our Q3 Strategy initiative has officially surpassed its initial goals. Huge shoutout to the Ops team for their relentless dedication to excellence. We're just getting started! 🚀 #ExecutiveHub #Strategy #Innovation
+                        </p>
+<div class="rounded-lg overflow-hidden mb-md border border-outline-variant">
+<img class="w-full h-48 object-cover" data-alt="A group of diverse professionals in a sleek, modern conference room collaborating around a large digital screen showing growth charts. The scene is lit with cool, professional office lighting and features a palette of deep reds and soft grays, evoking a sense of high-level strategic planning and team success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmEjHemfcQlboF_zi53wcJXdpmU1DQOFwfkF_wohdZ1dM4tB9lZrJw1aaJKuQZMV5vGw9n52H1yP_asa7iYPqTh8miy7xgjyLq9dvHiFbxY7RsJ1CZbNnGQRv8Au4gVfuFP3qMoW4gaHAPmEQdbKVSuqYhpUSHvOMGiE2FeKzvVf55y60kHY-8DcApNTw__k6kJ6Decq2VOCFVgBXVt8DaIPu-rDslAOgpwM0XSNFbvQFml-yoeUqtBc6SScnCV-DQZrWM_TvTrNQ"/>
+</div>
+<div class="flex items-center justify-between pt-sm border-t border-surface-container-low">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="thumb_up">thumb_up</span>
+<span class="text-label-md">124</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+<span class="text-label-md">18</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post Card 2 (Text only) -->
+<article class="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container-highest">
+<div class="p-md">
+<div class="flex items-center gap-3 mb-md">
+<img class="w-10 h-10 rounded-full border border-outline-variant" data-alt="Small thumbnail of Alex Sterling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZXo7n8jjqTedl8sVRpZDTSrECyyRygjeY_jYplCxc1mFPl8cvz-dTFDQhRmG2RIjsALD9kBR7ob7jIaQVAQ1AjZR_x5MERluJ_NjrItmSKqy6OJroWnFUBB3I__nq39C-HimrpJecLrPjdd5339QfAYpT4MCIqdTZh8UilHSG32uxNME6LHUo_GTdoqa7GwE0-yFF63qsffLAAs7EbAP5f8JaR7azZJdzD90N5zoIgh4V4g_HKZkWp6SGsy8mqMjJa5CtHuoZOiw"/>
+<div>
+<h4 class="font-label-md text-on-surface font-bold">Alex Sterling</h4>
+<p class="text-label-sm text-on-surface-variant">Yesterday • <span class="material-symbols-outlined text-[12px] align-middle" data-icon="public">public</span></p>
+</div>
+</div>
+<p class="font-body-md text-on-surface">
+                            Just finished reading 'The Hard Thing About Hard Things' for the third time. Every re-read brings new perspectives on leadership during periods of intense growth. What's on your executive reading list this quarter?
+                        </p>
+<div class="flex items-center justify-between mt-md pt-sm border-t border-surface-container-low">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="thumb_up">thumb_up</span>
+<span class="text-label-md">89</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+<span class="text-label-md">42</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Sidebar (Right Column) -->
+<div class="w-full md:w-80 space-y-md">
+<!-- Recognition Card -->
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container-highest">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Recognition Received</h3>
+<div class="space-y-sm">
+<div class="flex gap-3 items-start">
+<div class="bg-tertiary-fixed p-2 rounded-full">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="military_tech">military_tech</span>
+</div>
+<div>
+<p class="text-body-md font-bold">Innovation Catalyst</p>
+<p class="text-label-sm text-on-surface-variant">Awarded by CEO Council</p>
+</div>
+</div>
+<div class="flex gap-3 items-start">
+<div class="bg-primary-fixed p-2 rounded-full">
+<span class="material-symbols-outlined text-on-primary-fixed-variant" data-icon="star">star</span>
+</div>
+<div>
+<p class="text-body-md font-bold">Mentorship Excellence</p>
+<p class="text-label-sm text-on-surface-variant">20 Endorsements this month</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-md py-2 text-label-md font-bold text-primary border border-primary-fixed rounded-lg hover:bg-primary-fixed/20 transition-all">
+                        View All Achievements
+                    </button>
+</div>
+<!-- Mutual Connections -->
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container-highest">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Mutual Connections</h3>
+<div class="flex -space-x-3 mb-md">
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Avatar of a colleague." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYdmyRUTDKm4hA148TVHtim4EkxqjjAjJMsU1uK_-T1tXe464m7L8B3MN8l8kynKRlblFiOejtr-qj-MEgCkgSs5-GhbOtqm7WwoUDYr4rj4VjJhAwv0uJg5GGKrenviBmAwOUOVjd59V09K99iz9Zt9f4XB93isAcQUWphqw1fl6A3ZRHtQAryTHxd-oY3NmmNgFrQhF5BcTlL2QCEakI9uYzY6is6keNOLnRneY0zEV-5S7Ol5g_gWyR-sIrENDqBTQ7oLJp-EI"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Avatar of a colleague." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6GYbhhaxmxBGqiMg6mKtnijZikrMo-gYx3m1WvGup-0nbPfknLMW4c5-Y6Lyx1OZZlR8697hsLAYIcMluX_qwPis9CzZ6wndl6FMOdi-4LKORYIOPxpp6k7okjVT47kNCpiaGIQppxyCE_tKFhivd0fx3Nfmy0dI-WXEnH14p1SsDYYkgRkPN-FVU4Iaz8_K7-Wv4Gs2CbxAHdW7vkzYczkkAyEAIPH4vuImqxlunCDOZLxEq-hJ1SvwxUMHMkqrPKBAbS_DU9n4"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Avatar of a colleague." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMteaBpBhT7_tSsK-S_xpTegX3YxEBs7ANDiAKkQkngMOrSwZ3P266R7XaQKUjY_7ah0w__3PURrdfrcVGfATeBUwR2yA_ZvgCGAfUTdSY5w-UegPqqE2x6Jg0Tp_yuNn6bv562MloDw102mWUmqJ6Cz9HvG8E8J_eirKLVrKrlTtOxvoIs12Oql390y4jccxYCewIOzz_ZcAv5hWKcAr4DqN33mOdE4zbs8kVZYrXDyWseqdIW3XUaRiCILfD3bKhLK9Po9AB4AA"/>
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Avatar of a colleague." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNNtxhttMEoj9cTQvRWVmi4G2NPHqdClMrCtWdrcXKtjIAAGvaMRRo6VEVN5lxH_4q0e9pdbeJ6xJDrEapt_2nmRwfT-yfunNz_8J9EY6G2RtBDoy5Hnx0TOQBqDcNFq-fhuPEe3MuIkZ6DwUL57DlW4Vy1YYMfZaHDjrCWNGR7B5sJ4jdpTTRtC7r8zii44MgjjMmV1mBPg2sjLMyxslV_Z1JEiPf7JXBNngr702ag2Br6MdPeuDP7GMrVQF6BfbWKhB5uxqf0NA"/>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-surface-container-highest flex items-center justify-center text-label-sm font-bold text-on-surface-variant">
+                            +12
+                        </div>
+</div>
+<p class="text-body-md text-on-surface-variant mb-md">Sarah Jenkins, Michael Chen, and 12 others you know.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-500 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-500 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Network</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-500 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary scale-125" data-icon="add_circle" data-weight="fill">add_circle</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Post</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-500 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Events</span>
+</div>
+<!-- Active Tab: Settings/Profile -->
+<div class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill">settings</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Settings</span>
+</div>
+</nav>
+</body></html>

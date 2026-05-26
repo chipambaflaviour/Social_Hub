@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#c8e6ff",
+                    "tertiary-fixed-dim": "#a3cbea",
+                    "primary-container": "#630d16",
+                    "inverse-on-surface": "#ffedeb",
+                    "inverse-surface": "#392e2d",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "on-primary-fixed-variant": "#82252a",
+                    "on-secondary-fixed": "#001b3d",
+                    "outline": "#897170",
+                    "surface-container-highest": "#f2dedd",
+                    "background": "#fff8f7",
+                    "primary": "#410007",
+                    "on-primary": "#ffffff",
+                    "on-background": "#231919",
+                    "surface-container-low": "#fff0ef",
+                    "secondary": "#465f88",
+                    "tertiary-container": "#00344d",
+                    "on-tertiary-fixed": "#001e2f",
+                    "surface-tint": "#a13c3f",
+                    "on-tertiary-fixed-variant": "#204b65",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#b6d0ff",
+                    "surface-container-high": "#f8e4e2",
+                    "surface-dim": "#e9d6d4",
+                    "surface-variant": "#f2dedd",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#dcc0bf",
+                    "on-surface-variant": "#564241",
+                    "secondary-fixed": "#d6e3ff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#759dba",
+                    "primary-fixed": "#ffdad8",
+                    "surface": "#fff8f7",
+                    "secondary-fixed-dim": "#aec7f7",
+                    "surface-container": "#fde9e8",
+                    "on-secondary-fixed-variant": "#2e476f",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#3f5881",
+                    "on-primary-fixed": "#410007",
+                    "on-surface": "#231919",
+                    "tertiary": "#001e2f",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#ffb3b1",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#eb7475",
+                    "surface-bright": "#fff8f7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-margin": "16px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f7;
+            font-family: 'Inter', sans-serif;
+        }
+        .card-shadow {
+            shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<img alt="User avatar" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="A professional headshot of a corporate executive in a modern business setting. The person is wearing a tailored charcoal suit and has a warm, confident expression. The lighting is soft and professional, highlighting a clean, high-end office environment in the background with subtle red accents consistent with the corporate branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu93UREDLSa5W6jB5I-q3KiaD9sc9g79JKlfb5vXIvPldJa3D6Jykp1jfOsSiAKiWwQzHlCr8vHwDzv-8pPz_fZumXAWmp67slK2FY78QeQS4zvI7p9r_nl4HgG3D3VCmZyWXrC--ioyhTB79rbcRHWjwwaDBz8IHsncJ_PqzzHqRhagKX4jM7w5jPUf_hIZlqIeV3yFdPKHqfhtRBE0mXixEBhJf6iP_thMpE0Z2b_baF_RsS9oxB_ozLkILIfI7a5j21xlfJK7E"/>
+<h1 class="text-xl font-black text-red-900 dark:text-red-500 font-sans tracking-tight">ExecutiveHub</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-4 max-w-7xl mx-auto">
+<!-- Hero Search Section -->
+<section class="mb-lg">
+<div class="bg-primary-container rounded-xl p-xl text-on-primary flex flex-col md:flex-row items-center justify-between gap-md relative overflow-hidden" data-alt="A wide-angle interior view of a modern, high-end corporate office lobby. The architecture features clean glass lines and minimalist furniture. The lighting is bright and airy with a sophisticated, professional atmosphere. The image has a deep maroon color overlay that aligns with the corporate visual identity, creating a sense of established authority and calm productivity." style="background-image: linear-gradient(rgba(99, 13, 22, 0.9), rgba(99, 13, 22, 0.9)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLlkNguCP6PCfszCfyVT3GvDtfPrYudxcCeYB6FwswZv3h62KamJCgzYgYOLBKbQSFZZ6NkvUatP72mbPWFDSjE1Jacavc8ddrmvSA-bLX00c8S6uJNW4vSkcPDlSQJOd9HsNov1_9y9RRAN-72XQqIaiyYX8BBqJ-f49emTV7gyqCl2-CroDAoDPwMi26bB-7GPQAO5I7MTkJyoeLkKMk6FiuHucJyjkSzTQROZyCDyg3LO6IPKl4NLj-X3m3Vf9SzRql1WeJsE8'); background-size: cover; background-position: center;">
+<div class="z-10 w-full md:w-2/3">
+<h2 class="font-display-lg text-white mb-sm">HR Services &amp; Documents</h2>
+<p class="font-body-lg text-on-primary-container opacity-90 mb-md">Quick access to payroll, benefits, and career resources.</p>
+<div class="relative w-full max-w-xl">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-white text-on-surface rounded-full py-4 pl-12 pr-6 border-none focus:ring-2 focus:ring-primary shadow-lg font-body-md" placeholder="Search for policies, benefits, or documents..." type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md mb-xl">
+<!-- Benefits -->
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-outline-variant hover:border-primary transition-all duration-300 group cursor-pointer">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="medical_services">medical_services</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-xs">Benefits</h3>
+<p class="font-body-md text-on-surface-variant">Health, dental, and vision insurance plans and enrollment.</p>
+</div>
+<!-- Payroll -->
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-outline-variant hover:border-primary transition-all duration-300 group cursor-pointer">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="payments">payments</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-xs">Payroll</h3>
+<p class="font-body-md text-on-surface-variant">Pay stubs, tax forms (W-2), and direct deposit management.</p>
+</div>
+<!-- Policies -->
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-outline-variant hover:border-primary transition-all duration-300 group cursor-pointer">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="gavel">gavel</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-xs">Policies</h3>
+<p class="font-body-md text-on-surface-variant">Employee handbook, code of conduct, and legal guidelines.</p>
+</div>
+<!-- Career Growth -->
+<div class="bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-outline-variant hover:border-primary transition-all duration-300 group cursor-pointer">
+<div class="w-12 h-12 bg-surface-container rounded-lg flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="trending_up">trending_up</span>
+</div>
+<h3 class="font-headline-sm text-on-surface mb-xs">Career Growth</h3>
+<p class="font-body-md text-on-surface-variant">Learning modules, promotion paths, and internal jobs.</p>
+</div>
+</section>
+<!-- Recent Documents & Info Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- Recent Documents -->
+<div class="lg:col-span-2">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-display-md text-on-surface">Recent Documents</h2>
+<button class="text-primary font-label-md uppercase tracking-wider flex items-center gap-1 hover:underline">
+                        View All <span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] overflow-hidden">
+<div class="divide-y divide-gray-100">
+<!-- Doc Item -->
+<div class="p-md flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded bg-red-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-700" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<p class="font-body-lg text-on-surface font-semibold">2023_Benefits_Summary.pdf</p>
+<p class="font-label-md text-on-surface-variant">Modified 2 days ago • 2.4 MB</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-gray-500" data-icon="download">download</span>
+</button>
+</div>
+<!-- Doc Item -->
+<div class="p-md flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded bg-red-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-700" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<p class="font-body-lg text-on-surface font-semibold">Q3_Performance_Review_Framework.pdf</p>
+<p class="font-label-md text-on-surface-variant">Modified 1 week ago • 1.1 MB</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-gray-500" data-icon="download">download</span>
+</button>
+</div>
+<!-- Doc Item -->
+<div class="p-md flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded bg-red-50 flex items-center justify-center">
+<span class="material-symbols-outlined text-red-700" data-icon="picture_as_pdf">picture_as_pdf</span>
+</div>
+<div>
+<p class="font-body-lg text-on-surface font-semibold">Updated_Remote_Work_Policy.pdf</p>
+<p class="font-label-md text-on-surface-variant">Modified 3 weeks ago • 840 KB</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined text-gray-500" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Portal Status / Sidebar -->
+<div class="space-y-md">
+<h2 class="font-display-md text-on-surface mb-md">Quick Links</h2>
+<div class="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] p-md border border-outline-variant">
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm p-sm rounded hover:bg-surface-container-low transition-colors cursor-pointer text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-secondary" data-icon="calendar_month">calendar_month</span>
+                            Request Time Off
+                        </li>
+<li class="flex items-center gap-sm p-sm rounded hover:bg-surface-container-low transition-colors cursor-pointer text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+                            Verification of Employment
+                        </li>
+<li class="flex items-center gap-sm p-sm rounded hover:bg-surface-container-low transition-colors cursor-pointer text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-secondary" data-icon="help">help</span>
+                            Contact HR Support
+                        </li>
+</ul>
+</div>
+<div class="bg-primary text-on-primary rounded-xl p-md">
+<h4 class="font-headline-sm mb-xs">Need Help?</h4>
+<p class="font-body-md opacity-80 mb-md">Our executive HR concierge team is available Mon-Fri, 9am - 6pm EST.</p>
+<button class="w-full bg-white text-primary py-2 rounded-lg font-label-md uppercase tracking-wide hover:bg-red-50 transition-colors">Chat With Us</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-500 hover:text-red-800 dark:hover:text-red-300 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-500 hover:text-red-800 dark:hover:text-red-300 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Network</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-500 hover:text-red-800 dark:hover:text-red-300 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Post</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-500 hover:text-red-800 dark:hover:text-red-300 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Events</span>
+</div>
+<!-- ACTIVE TAB: Settings (Assuming HR is part of employee settings/portal context) -->
+<div class="flex flex-col items-center justify-center text-red-900 dark:text-red-400 scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Settings</span>
+</div>
+</nav>
+</body></html>

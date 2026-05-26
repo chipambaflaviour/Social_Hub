@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff8f7;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#c8e6ff",
+                      "tertiary-fixed-dim": "#a3cbea",
+                      "primary-container": "#630d16",
+                      "inverse-on-surface": "#ffedeb",
+                      "inverse-surface": "#392e2d",
+                      "primary-fixed-dim": "#ffb3b1",
+                      "on-primary-fixed-variant": "#82252a",
+                      "on-secondary-fixed": "#001b3d",
+                      "outline": "#897170",
+                      "surface-container-highest": "#f2dedd",
+                      "background": "#fff8f7",
+                      "primary": "#410007",
+                      "on-primary": "#ffffff",
+                      "on-background": "#231919",
+                      "surface-container-low": "#fff0ef",
+                      "secondary": "#465f88",
+                      "tertiary-container": "#00344d",
+                      "on-tertiary-fixed": "#001e2f",
+                      "surface-tint": "#a13c3f",
+                      "on-tertiary-fixed-variant": "#204b65",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "secondary-container": "#b6d0ff",
+                      "surface-container-high": "#f8e4e2",
+                      "surface-dim": "#e9d6d4",
+                      "surface-variant": "#f2dedd",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#dcc0bf",
+                      "on-surface-variant": "#564241",
+                      "secondary-fixed": "#d6e3ff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#759dba",
+                      "primary-fixed": "#ffdad8",
+                      "surface": "#fff8f7",
+                      "secondary-fixed-dim": "#aec7f7",
+                      "surface-container": "#fde9e8",
+                      "on-secondary-fixed-variant": "#2e476f",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#3f5881",
+                      "on-primary-fixed": "#410007",
+                      "on-surface": "#231919",
+                      "tertiary": "#001e2f",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#ffb3b1",
+                      "on-secondary": "#ffffff",
+                      "on-primary-container": "#eb7475",
+                      "surface-bright": "#fff8f7"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-margin": "16px",
+                      "base": "8px",
+                      "gutter": "16px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "sm": "8px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white border-b border-gray-200 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a confident senior male executive in his 40s wearing a charcoal business suit and a light blue shirt. The background is a blurred corporate office setting with soft, high-key lighting that creates a bright and airy modern professional aesthetic. The style is clean and high-fidelity, reflecting institutional reliability and modern corporate leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDahWWM14DYAWB9zffH945GXDscRxLnYxzqKmaUOR4lqR1N6lpiu4gFP1rF9vkFBChSIvNhbeJ5K9evefxNPY0F6ZZRhLuZ3uv5dvMjrErT2P9lFR7DF3f3h-s43u1oVZwyuW2T2-EZYET7rduylNOf_xdMJ5E9d5tVlC-ntUQbuRg6CX8pvlkEIecX6c4UT0HIEftU8lHza93HUIqP_maNVC0ZeBiXXQYxc68apickIukk211034kz0_fmdmZBh1e8VKYQ-KFHbD0"/>
+</div>
+<h1 class="text-xl font-black text-red-900 font-sans tracking-tight">ExecutiveHub</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-red-900 transition-colors duration-200 hover:bg-gray-50 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-24 px-4 max-w-2xl mx-auto space-y-md">
+<!-- Create Post Card -->
+<section class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(0,0,0,0.04)]">
+<div class="flex gap-md">
+<img alt="Avatar" class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a confident senior male executive in his 40s wearing a charcoal business suit. The background is a blurred corporate office setting with soft, high-key lighting. The overall mood is authoritative yet accessible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1cJQfTujVWjS1zQeh0iouXQsrnEG86dUa4toEDs0MYfQEBfIeSzkdu1m5yn9o3dOfj4_N3Q1fmQF48SJGoy4UFB0kosp-_BGNMAw7z9ExEmAtYiATRVxIcsTHYwMu9sEzQoxTSGe7t07-Ou5C6MCPZSMNp3tIqlZ4NHWRzUN0gNF6Q2nsqQCGG_iNQEnT7uTML88LnUqbcWSN2x0lxpVJz6u55z7G6kKmpoq73B2fwvVIwZHfkcsqKU9rAZ9zBu9DCZVZfr2vwNs"/>
+<button class="flex-1 bg-surface-container-low text-left px-md py-sm rounded-full text-on-surface-variant font-body-md">
+                    What's on your mind?
+                </button>
+</div>
+<div class="flex justify-between mt-md pt-sm border-t border-outline-variant">
+<button class="flex items-center gap-2 text-secondary font-label-md px-sm py-xs hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="image">image</span>
+                    Photo
+                </button>
+<button class="flex items-center gap-2 text-secondary font-label-md px-sm py-xs hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="videocam">videocam</span>
+                    Video
+                </button>
+<button class="flex items-center gap-2 text-secondary font-label-md px-sm py-xs hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="event">event</span>
+                    Event
+                </button>
+</div>
+</section>
+<!-- HR Announcement Post -->
+<article class="bg-surface-container-lowest rounded-xl border-2 border-primary shadow-[0_4px_12px_rgba(0,0,0,0.04)] overflow-hidden">
+<div class="bg-primary px-md py-xs flex items-center justify-between">
+<span class="text-white font-label-sm uppercase tracking-widest">HR Announcement</span>
+<span class="material-symbols-outlined text-white text-sm" data-icon="campaign" style="font-variation-settings: 'FILL' 1;">campaign</span>
+</div>
+<div class="p-md space-y-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg" data-icon="corporate_fare">corporate_fare</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-on-surface leading-tight">New Health &amp; Wellness Benefits 2024</h3>
+<p class="text-on-surface-variant font-label-md">Posted by Human Resources • 2h ago</p>
+</div>
+</div>
+<p class="font-body-md text-on-surface leading-relaxed">
+                    We are excited to announce a major expansion of our employee wellness program, including mental health support, fitness subsidies, and enhanced dental coverage starting next month.
+                </p>
+<button class="w-full mt-md py-sm bg-primary text-white font-label-md rounded-lg hover:bg-primary-container transition-colors">
+                    Read Full Policy
+                </button>
+</div>
+</article>
+<!-- General Staff Post -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)]">
+<div class="p-md flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<img alt="Sarah" class="w-10 h-10 rounded-full object-cover" data-alt="A professional portrait of a smiling female executive with glasses and a navy blazer, standing in a brightly lit glass-walled conference room. The atmosphere is warm and professional, with a clean corporate aesthetic featuring soft lighting and a palette of navy and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKZwNS0WCaB4DmsNuJK1MhkBS9gpssFbkB1Q4QlVL1zyiC3HVBVVBRWaH8hFZTxyVfc6BYXZqA_NSIJE8QywJrfgD1JRNjeB36wJJjOzWd-PITXCuIBmsMHHX-g4SlPdD-hIA1tb2qi_3pfX2015QztlySQ1oauM8kMpYOGJlCCIVr9jPdrkF8MTZr9w1Np-3s9ccwkrOr3Zml3EmRh1qJnLwHLPi7gz2vrveE2Hm_ys1VkJMGvCR9bJibFKG-jNR22sqI8_jQhHg"/>
+<div>
+<h3 class="font-label-md text-on-surface">Sarah Jenkins</h3>
+<p class="text-on-surface-variant font-label-sm">Product Strategy Lead • 5h ago</p>
+</div>
+</div>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<div class="px-md pb-sm">
+<p class="font-body-md text-on-surface leading-relaxed mb-md">
+                    Great to see the team coming together for our Q3 planning session. The energy was incredible and I'm so proud of what we've accomplished so far this year! 🚀
+                </p>
+</div>
+<div class="relative w-full aspect-video bg-surface-container overflow-hidden">
+<img alt="Team meeting" class="w-full h-full object-cover" data-alt="A group of diverse professionals collaborating around a large wooden table in a high-tech, modern office space. The room features floor-to-ceiling windows showing a city skyline at dusk. The interior is lit with warm, sophisticated architectural lighting, reflecting a corporate culture of ambition and community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7ed516Dkdh7hXn5Gldg_1nYjh_6zOvFnz8AVrT54RYplI-yqsl7MqCTBh79FTh6dAv1jr6YMFMXQaV18y81dfvxDA2wHgyl25HSv7VsIyFJ0x_PJXXORI5AMGam65Ff7GHjOA4b2rcr09pnDRaI5wZ82zpLul_HY_zdpaHrAPLXRQeyou-wt5ImIbH66mKi8WjC0X5At8W478I3HbOUzmIQF8f_PY1NlrfNQB5UTzwZWBcTA1wZvhb4IhVNYo-Y0QbPRU-4uS-Ec"/>
+</div>
+<div class="p-md">
+<div class="flex items-center justify-between pb-sm border-b border-outline-variant">
+<div class="flex items-center -space-x-1">
+<div class="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center border-2 border-white">
+<span class="text-[10px]">❤️</span>
+</div>
+<div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center border-2 border-white">
+<span class="text-[10px]">👍</span>
+</div>
+<span class="pl-3 text-on-surface-variant font-label-sm">42 reactions</span>
+</div>
+<span class="text-on-surface-variant font-label-sm">12 comments • 5 shares</span>
+</div>
+<div class="flex justify-around pt-sm">
+<button class="flex items-center gap-2 text-on-surface-variant font-label-md px-md py-xs hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="thumb_up">thumb_up</span>
+                        Like
+                    </button>
+<button class="flex items-center gap-2 text-on-surface-variant font-label-md px-md py-xs hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+                        Comment
+                    </button>
+<button class="flex items-center gap-2 text-on-surface-variant font-label-md px-md py-xs hover:bg-surface-container rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+                        Share
+                    </button>
+</div>
+</div>
+</article>
+<!-- Recognition Post -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] p-md border-l-4 border-secondary">
+<div class="flex items-start gap-md">
+<div class="relative">
+<img alt="Michael" class="w-16 h-16 rounded-full object-cover border-2 border-secondary" data-alt="A portrait of a male professional in his 30s with a warm smile, wearing a modern business-casual outfit. He is positioned against a clean, light gray background that emphasizes clarity and professional focus. The lighting is soft and even, highlighting his features without harsh shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIjBXDcYdpIczkD2Rty1S3cj_xRIyxpzM5RIRe6tuNjiR-Un0EiP8QjFo9sHg542giaj_Eb1N6nTNRotCK7dBSdLRYBL4zWSy4JaOkPiEPorflnvHM2ksSAVg2bSdgZqyhiBFq2ld3SdAE5aV3NiDZuwaHj48jGOKwU4H2yrKSoQ3txGVGEkTjVJoYpqo6R_M75lakJv2VvtKWbw-Px2PNoa_SiUWeDJgXmEVlLQ3m3y929wyFg8Km8G6UzvdNfULL0v3J2QDXt50"/>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-white w-7 h-7 rounded-full flex items-center justify-center border-2 border-white">
+<span class="material-symbols-outlined text-[14px]" data-icon="military_tech" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<h4 class="font-headline-sm text-on-surface">Congratulations, Michael!</h4>
+<span class="text-on-surface-variant font-label-sm">Yesterday</span>
+</div>
+<p class="font-body-md text-on-surface mt-xs">
+                        Celebrating <span class="font-bold text-secondary">5 Years</span> of excellence at ExecutiveHub. Michael has been a cornerstone of our Engineering team and a mentor to many.
+                    </p>
+<div class="mt-md flex gap-sm">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm">#Anniversary</span>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-sm">#TeamGrowth</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Event Post -->
+<article class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] overflow-hidden">
+<div class="flex h-32">
+<div class="w-1/3 bg-primary-container flex flex-col items-center justify-center text-white">
+<span class="font-display-md leading-none">24</span>
+<span class="font-label-sm uppercase">OCTOBER</span>
+</div>
+<div class="w-2/3 p-md flex flex-col justify-between">
+<div>
+<h4 class="font-headline-sm text-on-surface">Q4 Global Town Hall</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mt-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+<span class="font-label-sm">10:00 AM - 11:30 AM EST</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span>
+<span class="font-label-sm">Main Auditorium / Zoom</span>
+</div>
+</div>
+</div>
+<div class="p-md bg-surface-container-low flex items-center justify-between">
+<div class="flex -space-x-2">
+<img alt="Attending 1" class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a young professional woman." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5m99I_58UnwrylL41G2kYPKaUv4r5gKjPnfkYDh5XLn-3pWuhzpAIwOlr-mG4xZeu2i4ReTJStutLHt_-JJoFL7Q7bGmfbqWHw4atJER5L0jCSGcB2cnm_pnOnbA8efFMug94Np473D7uJKu8yNDG7iMFqHYaQNW0u-tkPtoUVITC6v_wWjZCLxFpj72L5-HlnIRiWvocz1OukCeU1qmJZ_cIjqZ93QthvqgMQMEgwf5xbCsoGR-sSM5vo9dZbRjnN5QrU8DOpyQ"/>
+<img alt="Attending 2" class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Portrait of a young professional man." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Mxff6tYGjhvBBeSEui-D2g5f--ux7IyCeXw_7AMpyfC8Qf_87Sy2hdmqC9-uayyK2-WVy4USLr02qk3kDeAZzkija6cJfAvvunlHMFW49CeG1lQOmEyG_RZ1L9DDeZQ_6tU1JkceI08mpy14mNlAm-q5TxD1hyJ3Wh6B6Id27RMX1K_yendUSX8dj6gT_PcZXRwty0BrzlWAyBTJAszCqElAa8lMle0CSux2GGGFJLlIZcS_AAdwCHBF280PNRu7vj6CYn0raIs"/>
+<div class="w-8 h-8 rounded-full bg-outline flex items-center justify-center text-white font-label-sm border-2 border-white">+142</div>
+</div>
+<button class="bg-secondary text-white font-label-md px-lg py-sm rounded-lg hover:bg-on-secondary-container transition-colors">
+                    Join/RSVP
+                </button>
+</div>
+</article>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-xl flex items-center justify-center hover:scale-105 active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-red-900 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="dynamic_feed" style="font-variation-settings: 'FILL' 1;">dynamic_feed</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 transition-transform scale-95 active:scale-90 hover:text-red-800" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 transition-transform scale-95 active:scale-90 hover:text-red-800" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Post</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 transition-transform scale-95 active:scale-90 hover:text-red-800" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 transition-transform scale-95 active:scale-90 hover:text-red-800" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Settings</span>
+</a>
+</nav>
+</body></html>

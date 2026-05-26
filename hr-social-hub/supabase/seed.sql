@@ -1,0 +1,2 @@
+-- Seed file intentionally left blank.
+-- Dummy data has been removed.

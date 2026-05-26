@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#f2dedd",
+                    "surface-tint": "#a13c3f",
+                    "secondary-fixed": "#d6e3ff",
+                    "primary-fixed": "#ffdad8",
+                    "surface-dim": "#e9d6d4",
+                    "tertiary-fixed-dim": "#a3cbea",
+                    "surface-container-low": "#fff0ef",
+                    "inverse-surface": "#392e2d",
+                    "on-secondary-fixed": "#001b3d",
+                    "on-error": "#ffffff",
+                    "secondary": "#465f88",
+                    "tertiary": "#001e2f",
+                    "surface-container": "#fde9e8",
+                    "background": "#fff8f7",
+                    "surface-bright": "#fff8f7",
+                    "secondary-fixed-dim": "#aec7f7",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fff8f7",
+                    "on-background": "#231919",
+                    "tertiary-fixed": "#c8e6ff",
+                    "on-secondary-fixed-variant": "#2e476f",
+                    "on-primary-fixed-variant": "#82252a",
+                    "surface-container-highest": "#f2dedd",
+                    "on-tertiary-fixed-variant": "#204b65",
+                    "on-tertiary-fixed": "#001e2f",
+                    "surface-container-high": "#f8e4e2",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#630d16",
+                    "on-tertiary-container": "#759dba",
+                    "on-surface-variant": "#564241",
+                    "on-primary-container": "#eb7475",
+                    "tertiary-container": "#00344d",
+                    "inverse-primary": "#ffb3b1",
+                    "error": "#ba1a1a",
+                    "primary": "#410007",
+                    "secondary-container": "#b6d0ff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#ffb3b1",
+                    "outline-variant": "#dcc0bf",
+                    "on-primary-fixed": "#410007",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#231919",
+                    "on-secondary-container": "#3f5881",
+                    "outline": "#897170",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#ffedeb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "sm": "8px",
+                    "container-margin": "16px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "display-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "display-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { background-color: #fff8f7; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white shadow-sm border-b border-gray-200">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-surface-variant">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional headshot of a middle-aged male executive with a confident smile, wearing a sharp navy blue suit and a crisp white shirt. The background is a brightly lit, modern corporate office with soft bokeh highlights. The lighting is clean and high-key, emphasizing a reliable and authoritative persona in a light-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMFYWRymMc76wxPrl0x-nxpX7mxitHgkrT1lviYWGX3qPQ6v5aPOIKdr8CA-MTdwpPNaXrSoosKNpjTf2dTGopR7_4UYYfkfYnDrGY_un4tkdkCYunB8D9-cgvabIkZgdMw82VOayn_63RlqFg-K43YyfCK-mhhyhx8UJEhk5pgFRhmO84Wf4WIiQ7ro2Z8dzNwYsF9A-kwrjeqcxfLfWAG3CStfcIA1JxP2Q8x6I7BcpT4x2yVugoVQrb4VLAXJBqwUz2nh2kfso"/>
+</div>
+<span class="font-sans font-bold tracking-tight text-xl font-black text-red-900">ExecutiveHub</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-50 transition-colors duration-200">
+<span class="material-symbols-outlined text-red-900">search</span>
+</button>
+</header>
+<main class="pt-20 pb-24 px-4 max-w-md mx-auto space-y-md">
+<!-- Compose Card -->
+<section class="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] p-md border border-surface-container-high">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0">
+<img alt="Avatar" data-alt="Close up of a professional male executive profile picture, high quality, soft daylight lighting, corporate aesthetic, navy and white tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU3MTeG0atAFhV7kgO4bCMGHhMr47t5NuRba2BKRmAgIhrfRUsyfrBsp-Q-SgqaYQxz15mMuoRhUgQU8O4Koq6R3xX4ZeySPLTCX9mjbuYpdu1-1MeH1w6SMsELyryLbHOiQNGdLIEQyq1mlxk4QpkcXJ66Sefiq9oc_tU4BsCMxszm-HekZK8Ffpvvx-kcCpCZYQfTvVOIBx5UThcFDTsGwoi8OQj2-ILzF-MHLRMQik7qXhxjhWIi0K22eeN6uMCGp2_KJvuqVQ"/>
+</div>
+<button class="flex-1 text-left bg-surface-bright border border-outline-variant px-4 py-2.5 rounded-full font-body-md text-on-surface-variant/70">
+                    What's on your mind?
+                </button>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-surface-container-high">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-secondary text-[20px]">image</span>
+<span class="font-label-md text-on-surface-variant">Photo</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-secondary text-[20px]">videocam</span>
+<span class="font-label-md text-on-surface-variant">Video</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-secondary text-[20px]">poll</span>
+<span class="font-label-md text-on-surface-variant">Poll</span>
+</button>
+</div>
+</section>
+<!-- Pinned Post -->
+<article class="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] overflow-hidden border-2 border-red-900/10">
+<div class="bg-red-900/5 px-md py-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-red-900" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+<span class="font-label-sm text-red-900 uppercase tracking-widest">Pinned Post</span>
+</div>
+<div class="p-md">
+<div class="flex items-center gap-3 mb-md">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-white shadow-sm">
+<img alt="Sarah Chen" data-alt="Portrait of a smiling female HR Director in a modern office. She has a warm, professional expression. The setting is bright and collaborative, reflecting an inclusive corporate culture. Soft morning light fills the room, highlighting natural skin tones and professional attire." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXV4JohQJtIAV5c1efI-JoRt0XKQeldrlkwt0RBLKSGuAvGpVZVS3UW2Wz2KS5mkZoM-3lAxZ-bLN_ugzyO7yI81VHLhwXiLw9VaOgAb5Ov0PXR0lkMQgJZFttAg-uVJoOt5DwWhbNpjCO7am19UOMV_0L8N82Zcvoenv2tXWxfK5GG8VonlLhU_zIg5t4QvhNWgYcWuZ_RTH4k4cZESoOaXodgNn3a9oP5TFxY9-R083YUARkeojY354BIwN1OOVGm9dspmfgnCM"/>
+</div>
+<div>
+<h3 class="font-label-md text-on-background font-bold">Sarah Chen</h3>
+<p class="font-label-sm text-on-surface-variant">HR Operations • 2h ago</p>
+</div>
+<button class="ml-auto material-symbols-outlined text-on-surface-variant">more_horiz</button>
+</div>
+<p class="font-body-md text-on-background mb-md">
+                    The wait is over! 🎡 Our annual **Company Fun Day** is officially happening on September 15th at the Lakeside Park. Expect food trucks, games, and some very competitive department relay races! Tag your team below.
+                </p>
+<div class="rounded-lg overflow-hidden mb-md aspect-[16/9] relative">
+<img alt="Fun day event teaser" class="w-full h-full object-cover" data-alt="A vibrant outdoor corporate festival at a lakeside park. Cheerful employees are seen laughing and engaging in group activities under a bright, sunny sky. The scene is filled with colorful balloons, wooden picnic tables, and a relaxed, professional yet informal vibe. The lighting is warm and natural, evoking a sense of community and celebration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnWUqmJZPP61kV8jCHSS64wkgXBivBt4mBBtX-9T-a4xeMfbi0CmNh04koQo4aaGYV6QrHvP9AmVu8kyDVxoZ0nrzsNUQSMUymin0KQ0wmgst3sTzYNyX1xvy4bp9vUd4MgAbDWDGER7IMBTfmrv07eOQWZiNZqhQQ53_3YU92u2gJAfn-djqgOFcgniN6UjdWlBafSGBDn9hV6WM-RQzmgsf5Aw6k9NEvvkyFC-0u4GgYc10N5H7ebAMU29SH_5FDfmSsU9qvbjQ"/>
+<div class="absolute bottom-3 left-3 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+<span class="text-white font-label-sm">#TeamBuilding #FunDay2024</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-md border-t border-surface-container-high">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-red-900 flex items-center justify-center border-2 border-white text-[10px] text-white">👍</div>
+<div class="w-6 h-6 rounded-full bg-red-600 flex items-center justify-center border-2 border-white text-[10px] text-white">❤️</div>
+<span class="pl-4 font-label-sm text-on-surface-variant">142 reactions</span>
+</div>
+<span class="font-label-sm text-on-surface-variant">28 comments • 12 shares</span>
+</div>
+</div>
+</article>
+<!-- Standard Post 1 -->
+<article class="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] p-md border border-surface-container-high">
+<div class="flex items-center gap-3 mb-md">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0">
+<img alt="David Miller" data-alt="A focused male developer sitting at a high-tech workstation with dual monitors. He is wearing a casual maroon sweater, looking content. The background is a modern tech office with soft, ambient blue and red lighting accents. Professional yet informal atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcxwpap7QS7wzUfdBtIo165WaYRILMOjGlHgJgeTRA6QD-LOiittYJ0npkOsNHW0BmhYBCPbuYay1ALGe5H5huanrofpH8qvs6ap1t1p_IxxbKWr0pXMY-s5Fb2v9HCY4hDwN3FOauvDHbjr83M4gB34_s8no8s5RloKjvSNip3GcBYsJd1VBOWRyvKs06BNoN8glL4-HKXj2wVo6lNeGKKwfIuDBkw91ZpnNhZ26CKIguv2HGp_Ivh3z0RUaXLoz3-2AY4Jb0G20"/>
+</div>
+<div>
+<h3 class="font-label-md text-on-background font-bold">David Miller</h3>
+<p class="font-label-sm text-on-surface-variant">Senior Engineer • 4h ago</p>
+</div>
+<button class="ml-auto material-symbols-outlined text-on-surface-variant">more_horiz</button>
+</div>
+<p class="font-body-md text-on-background mb-md">
+                Finally shipped the v3.0 core architecture today! 🚀 Huge shoutout to the engineering squad for the late nights and too much coffee. Time for a well-deserved team lunch. Anyone recommend the new taco spot? 🌮
+            </p>
+<div class="flex items-center gap-4 py-2 border-y border-surface-container-high mb-md">
+<button class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-surface-variant rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-red-900">thumb_up</span>
+<span class="font-label-md text-on-surface-variant">Like</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-surface-variant rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-red-900">chat_bubble</span>
+<span class="font-label-md text-on-surface-variant">Comment</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 py-2 hover:bg-surface-variant rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-red-900">share</span>
+<span class="font-label-md text-on-surface-variant">Share</span>
+</button>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0">
+<img alt="Commenter" data-alt="Headshot of a friendly female professional in her 30s with a casual business style. Warm lighting, modern office interior blurred in the background. High clarity and professional tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVY_oxf-ngfdz9S53vOmOHHNAYf77QTeaBh5xBT4ozpK-mbOl-K6froNyw8wy8Sz_xfoeAJraDoi-UjYl4MxitET7gVPmtkxIsa1tqWOPD6hx2ei0xNtlYsLQoc1loNTV3pUp22_6j_hYKoFFWL0PLSMS8BJdRXaTQnUfF63Ke0xvJcHR0xJbtdOnsjMeIjrtJ8wky86dbDB3cz5FPbNVGAzPb9SVVUNRwWbysRo4rdObcKrdEogFrrPTtU65-SWiHLLrySl1Y5Cw"/>
+</div>
+<div class="flex-1 bg-surface-bright p-3 rounded-2xl">
+<p class="font-label-md font-bold text-on-background">Jessica Lane</p>
+<p class="font-body-md text-on-background">The taco spot is amazing! Get the spicy shrimp ones. Great job on the launch team!</p>
+</div>
+</div>
+</article>
+<!-- Standard Post 2 (Poll) -->
+<article class="bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] p-md border border-surface-container-high">
+<div class="flex items-center gap-3 mb-md">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0">
+<img alt="Marcus Thorne" data-alt="Portrait of a male creative director in a bright studio. He is wearing a simple grey tee, looking relaxed and approachable. The lighting is soft and natural, emphasizing a creative and friendly corporate vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFGXg7v_vbZ4VwtZ9qGPwE_vu8jSTezrrqi3NplxBIkQCvKG6kZvZ9H8eKofuwocrq_dgf8gLDo7KQu5OeooqSmeoRH_aBOKkYiC-bvtJKjyxUR0CBCvbzTZ9wwrICWlmdOBqBxACYokU-Ganp4JcmQNYvEibfKkjFmzNecVkEWiZ47RQFroCpzezimH0m6tNMB-cvUcwskLBrpQ42ccl2uUNMsh8MSITvU989YxJFj5yufy9sJK5kgBwKfdy8gz0Ye2r02ZxMpaE"/>
+</div>
+<div>
+<h3 class="font-label-md text-on-background font-bold">Marcus Thorne</h3>
+<p class="font-label-sm text-on-surface-variant">Creative Director • 6h ago</p>
+</div>
+<button class="ml-auto material-symbols-outlined text-on-surface-variant">more_horiz</button>
+</div>
+<p class="font-body-md text-on-background mb-md">
+                Working on the new lobby mural. Which theme speaks more to our culture? 🎨
+            </p>
+<div class="space-y-sm mb-md">
+<button class="w-full text-left p-3 rounded-lg border border-red-900/20 bg-red-900/5 flex items-center justify-between group">
+<span class="font-label-md text-red-900">Modern Abstract / High Energy</span>
+<span class="font-label-sm font-bold text-red-900">64%</span>
+</button>
+<div class="w-full bg-surface-bright h-1 rounded-full overflow-hidden mb-2">
+<div class="bg-red-900 h-full" style="width: 64%"></div>
+</div>
+<button class="w-full text-left p-3 rounded-lg border border-outline-variant hover:bg-surface-variant transition-colors flex items-center justify-between group">
+<span class="font-label-md text-on-surface-variant">Nature-Inspired / Calm</span>
+<span class="font-label-sm text-on-surface-variant">36%</span>
+</button>
+<div class="w-full bg-surface-bright h-1 rounded-full overflow-hidden">
+<div class="bg-outline-variant h-full" style="width: 36%"></div>
+</div>
+</div>
+<p class="font-label-sm text-on-surface-variant mb-md">86 votes • 1 day left</p>
+<div class="flex items-center gap-2">
+<div class="flex items-center -space-x-1">
+<span class="text-sm">❤️</span>
+<span class="text-sm">👏</span>
+</div>
+<span class="font-label-sm text-on-surface-variant">12 people reacted</span>
+</div>
+</article>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-red-900 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dynamic_feed</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 scale-95 hover:text-red-800 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 scale-95 hover:text-red-800 transition-transform" href="#">
+<span class="material-symbols-outlined text-[32px]">add_circle</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Post</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 scale-95 hover:text-red-800 transition-transform" href="#">
+<span class="material-symbols-outlined">event</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 scale-95 hover:text-red-800 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider">Settings</span>
+</a>
+</nav>
+</body></html>

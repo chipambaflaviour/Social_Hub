@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ExecutiveHub | Moderation &amp; Admin Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#f2dedd",
+                        "surface-tint": "#a13c3f",
+                        "secondary-fixed": "#d6e3ff",
+                        "primary-fixed": "#ffdad8",
+                        "surface-dim": "#e9d6d4",
+                        "tertiary-fixed-dim": "#a3cbea",
+                        "surface-container-low": "#fff0ef",
+                        "inverse-surface": "#392e2d",
+                        "on-secondary-fixed": "#001b3d",
+                        "on-error": "#ffffff",
+                        "secondary": "#465f88",
+                        "tertiary": "#001e2f",
+                        "surface-container": "#fde9e8",
+                        "background": "#fff8f7",
+                        "surface-bright": "#fff8f7",
+                        "secondary-fixed-dim": "#aec7f7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fff8f7",
+                        "on-background": "#231919",
+                        "tertiary-fixed": "#c8e6ff",
+                        "on-secondary-fixed-variant": "#2e476f",
+                        "on-primary-fixed-variant": "#82252a",
+                        "surface-container-highest": "#f2dedd",
+                        "on-tertiary-fixed-variant": "#204b65",
+                        "on-tertiary-fixed": "#001e2f",
+                        "surface-container-high": "#f8e4e2",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#630d16",
+                        "on-tertiary-container": "#759dba",
+                        "on-surface-variant": "#564241",
+                        "on-primary-container": "#eb7475",
+                        "tertiary-container": "#00344d",
+                        "inverse-primary": "#ffb3b1",
+                        "error": "#ba1a1a",
+                        "primary": "#410007",
+                        "secondary-container": "#b6d0ff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "outline-variant": "#dcc0bf",
+                        "on-primary-fixed": "#410007",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#231919",
+                        "on-secondary-container": "#3f5881",
+                        "outline": "#897170",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#ffedeb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "sm": "8px",
+                        "container-margin": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "display-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "display-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f7;
+            font-family: 'Inter', sans-serif;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background pb-20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-4 h-16 bg-white border-b border-gray-200 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a senior executive male with a kind but authoritative expression. He is wearing a dark charcoal suit with a crisp white shirt. The background is a blurred high-end corporate office with soft, warm lighting and mahogany accents. The image follows a high-key light mode aesthetic, emphasizing clarity and professional success." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3UddfqAFrh2FhXQM2hnZcdX11zCs6tTx2XxZl-yshmg-O0GMpM8ZSOeCmPG2dDaO58LYH9xQtbxutSe9rTFcGfkUh-TBr-z9AW27syFoMH29PmSiMeZHcErUDurjay1F99qosafw5rfW-5sp3MF6LpQmkxzde0pul3k8U7mTzpKAfwKablwGtyTGrObKyClCCNTMjYHXMkzsECiggm8IN95z9Y26QGVmBCVU7Fel5qbpVS3stmHZ0CYi0kTmjCB6nSXws-GL-E4k"/>
+</div>
+<span class="text-xl font-black text-red-900 font-sans tracking-tight">ExecutiveHub</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-500 hover:bg-gray-50 transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 text-gray-500 hover:bg-gray-50 transition-colors duration-200 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-4 max-w-7xl mx-auto">
+<!-- Welcome Header -->
+<div class="mb-lg">
+<h1 class="font-display-lg text-display-lg text-primary mb-xs">Admin Insights</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">System performance and moderation overview for Today.</p>
+</div>
+<!-- Analytics Bento Grid -->
+<div class="bento-grid mb-xl">
+<!-- Engagement Stats -->
+<div class="md:col-span-2 bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] flex flex-col justify-between min-h-[180px] border border-surface-container">
+<div class="flex justify-between items-start">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Engagement Stats</span>
+<h2 class="font-display-md text-display-md text-primary mt-1">24.8k</h2>
+</div>
+<div class="bg-surface-container-low px-2 py-1 rounded text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span class="font-label-sm text-label-sm">+12%</span>
+</div>
+</div>
+<div class="h-16 flex items-end gap-1 mt-4">
+<div class="flex-1 bg-primary h-[40%] rounded-t-sm opacity-20"></div>
+<div class="flex-1 bg-primary h-[60%] rounded-t-sm opacity-40"></div>
+<div class="flex-1 bg-primary h-[45%] rounded-t-sm opacity-20"></div>
+<div class="flex-1 bg-primary h-[85%] rounded-t-sm opacity-60"></div>
+<div class="flex-1 bg-primary h-[55%] rounded-t-sm opacity-40"></div>
+<div class="flex-1 bg-primary h-[95%] rounded-t-sm opacity-100"></div>
+<div class="flex-1 bg-primary h-[70%] rounded-t-sm opacity-80"></div>
+</div>
+</div>
+<!-- Trending Hashtags -->
+<div class="md:col-span-1 bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md block">Trending Hashtags</span>
+<ul class="space-y-3">
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md font-semibold">#M&amp;AStrategies</span>
+<span class="font-label-md text-label-md text-on-surface-variant">2.4k</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md font-semibold">#LeadershipAI</span>
+<span class="font-label-md text-label-md text-on-surface-variant">1.9k</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="font-body-md text-body-md font-semibold">#GlobalSupply</span>
+<span class="font-label-md text-label-md text-on-surface-variant">1.5k</span>
+</li>
+</ul>
+</div>
+<!-- Most Active Users -->
+<div class="md:col-span-1 bg-white p-md rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-surface-container">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-md block">Most Active Users</span>
+<div class="flex -space-x-3 mb-md">
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white" data-alt="A collage of five professional headshots representing high-performing corporate executives of diverse backgrounds. Each individual is dressed in modern business attire. The portraits are well-lit with a bright, crisp studio aesthetic, set against a consistent light-grey background that conveys a sense of unity, intelligence, and professional accomplishment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVCudC0Fx3Ohbo8dan97vWJ8w5jMyAnyccdwB9dwOymetgpsZFljuwluCeFRv--Dzo2fSnvGrKs8YIDB7nmgXXOFY1YDn8SMvFlhdOwF59pqjgNtS9A9ctAWy8rd5GSsz5SPVudA3rmp3SS0aSpCtW18aNXDkHkrwHzUBTYQAQIjbAF69o1FN81dI_dWb36Ygdt-SYNgpVrmXl_Y3TrfWekzhjGTV4uBhX9Yo47QBpkgCtUAR7u3dht5CIjplD9aKiiqMbzGF_NHQ"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white" data-alt="Close up professional portrait of a woman in her late 40s with a confident smile, wearing a sophisticated blue blazer. The lighting is soft and natural, suggesting a high-end corner office environment. The overall mood is approachable yet powerful, using a palette of soft blues and bright whites to maintain a clean corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDERcC3thh-i1KkAhmBG2kIiI6eayHzAYNFC-tCP-Z3hk5tc7jVrSalq4XTbyYUFcGCE4ah78Xlk0VeqYw5zTQLgiLLCrSULdU3Kr-FBf8VI-Rc6ihqUxeWWRMzLKnjM5HawYkVDOlSuM0zwQ3j1FeV4xXXMpuR1wDoAOnX4_UHKxPY0m09Ske3PuvjFO5jAnBQ7WT5_xPVNKf4XuDKZ1tuRqYuC3y4hnNQTvWcXR_f-8d7Z1w94LnoWIv-zk8pgBb2InBdp1_9f2I"/>
+<img alt="User" class="w-10 h-10 rounded-full border-2 border-white" data-alt="Professional headshot of a middle-aged male executive with glasses, smiling warmly. He is in a modern architectural setting with glass walls and natural light. The aesthetic is bright and optimistic, emphasizing professional reliability and intellectual expertise through a light-mode color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANRKyD2XhHMAaNBhcA7hhUPr6wqOOeehga774IB3Qv6QBA9HLG69ztjo34EHjgVaXN49-WIJ4bEMACh4zNojbP62xad9n2L2smH__Ka5LybMd1n3ridMrPodDe28gg5BIt7K6MYmN_sVe0zReOtntiUnCdqQ3MQs70nbamk73sDzvnJcZlDKPO20Qxvf6QJoosH-AZuxrkhpF6WjdeKllpoAbW2StVzQn4MqwACT-khkx2A3_TMmZpDMbWnKbsScMRUuypD_iWcAo"/>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-surface-variant flex items-center justify-center text-primary font-label-sm">+18</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Top contributors average 14 actions/day.</p>
+</div>
+</div>
+<!-- Section: Pinned Posts -->
+<div class="mb-xl">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-primary">Pinned Posts</h3>
+<button class="font-label-md text-label-md text-secondary border border-secondary px-3 py-1.5 rounded-lg hover:bg-secondary-fixed transition-colors">Manage Pins</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-white p-md rounded-xl shadow-sm border border-surface-container flex gap-md">
+<div class="w-16 h-16 rounded-lg bg-surface-container-low flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="push_pin">push_pin</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg font-bold text-on-background line-clamp-1">Quarterly Economic Outlook 2024</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-1">Strategic directives for all department heads regarding the upcoming market shift...</p>
+<div class="mt-2 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-0.5 rounded-full">Report</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">Pinned by Admin</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-md rounded-xl shadow-sm border border-surface-container flex gap-md">
+<div class="w-16 h-16 rounded-lg bg-surface-container-low flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="article">article</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg font-bold text-on-background line-clamp-1">Annual Leadership Summit: Zurich</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-1">Registration details and venue itinerary for the annual executive gathering...</p>
+<div class="mt-2 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant bg-secondary-fixed px-2 py-0.5 rounded-full">Event</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">Pinned by PR</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Flagged Content -->
+<div class="mb-xl">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-sm text-headline-sm text-primary">Flagged Content</h3>
+<div class="bg-error-container text-on-error-container px-3 py-1 rounded-full font-label-md text-label-md">4 Pending Review</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm border border-surface-container overflow-hidden">
+<div class="divide-y divide-gray-100">
+<!-- Flagged Item 1 -->
+<div class="p-md hover:bg-surface-container-lowest transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-3">
+<img alt="User" class="w-10 h-10 rounded-full" data-alt="A small circular avatar of a business professional looking serious and focused. The background is a clean studio environment with soft neutral lighting. The professional aesthetic is maintained with a simple high-collar dark shirt, fitting the modern corporate style of the application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQPo_AmEDifX1rTGtdEw5TGVUq6Fm2rP3y0xvQ9A-EndjK5-rrikjCp6Z6tCChEIiMCU71hW7Wf_7Ddfo_Fp8opLVZu0odHFuOakEQwafrWClTzbBdgllehb1MT3h9hIjbbbIXETD3513Rz944YhCyjkIIuTnQggSveGMnUNe442QdCXaGotjzyLz-GXiqtkI4gwheVfoOybAxyEaykNyTqDma0WhSdGVNRYn-snERwvdmMaN-LSw7EV3S_-DC3fvmkKcdA6eaxY"/>
+<div>
+<p class="font-body-md text-body-md font-bold text-on-background">Brent Sterling</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Flagged: Unprofessional conduct</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md bg-surface-bright p-sm rounded-lg italic">
+                            "The strategy presented by the VP of Sales is completely delusional and borders on incompetence. We need new leadership immediately."
+                        </p>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white font-label-md text-label-md py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+                                Remove
+                            </button>
+<button class="flex-1 border border-outline text-on-surface-variant font-label-md text-label-md py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+                                Dismiss
+                            </button>
+</div>
+</div>
+<!-- Flagged Item 2 -->
+<div class="p-md hover:bg-surface-container-lowest transition-colors">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-3">
+<img alt="User" class="w-10 h-10 rounded-full" data-alt="Avatar of a female executive with a neutral expression. She is wearing professional glasses and a modern blazer. The image is brightly lit, ensuring clear visibility and a professional, modern feel consistent with an executive networking platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs3X70J_QKgyyzfYDEJ5jtrCYIU2Hrfl_bWfbSWDnfZB8YBA_O5_Lxd5629zfws_OEgFrlTBRK7kRdZgsVzyKJunc8O8y5N4-bDSEai6vVVuca7aH5Bs6uTqimD-JaKa95o_DDX-muq6TPP6fH0eP1y6fzPFVxpXMOJyo23cMSynEdR1Ed_8O11K-t6bXkad35mwZCTNR0_Y1US_y7C-QmmA9vfbnQYKm6U2JovlrNAI-u85OeAPL7kSR9wJjRMZ2qr1XT9hAKAkA"/>
+<div>
+<p class="font-body-md text-body-md font-bold text-on-background">Alicia Moore</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Flagged: Spam/Commercial</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">5h ago</span>
+</div>
+<div class="bg-surface-bright p-sm rounded-lg mb-md">
+<p class="font-body-md text-body-md text-on-surface-variant">"Check out this crypto link for 10x returns guaranteed! [Link Removed]"</p>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white font-label-md text-label-md py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+                                Remove
+                            </button>
+<button class="flex-1 border border-outline text-on-surface-variant font-label-md text-label-md py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+                                Dismiss
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-2 py-3 bg-white border-t border-gray-200 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-red-800 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="dynamic_feed">dynamic_feed</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-red-800 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider mt-1">Network</span>
+</a>
+<a class="flex flex-col items-center justify-center text-red-900 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider mt-1">Post</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 hover:text-red-800 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider mt-1">Events</span>
+</a>
+<a class="flex flex-col items-center justify-center text-red-900 font-bold transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[11px] font-semibold font-sans uppercase tracking-wider mt-1">Settings</span>
+</a>
+</nav>
+</body></html>
