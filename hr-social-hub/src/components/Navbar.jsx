@@ -8,6 +8,8 @@ export default function Navbar() {
   const location = useLocation();
   const [showNotifications, setShowNotifications] = useState(false);
 
+  if (!user) return null;
+
   const notifications = [];
 
   const links = [
