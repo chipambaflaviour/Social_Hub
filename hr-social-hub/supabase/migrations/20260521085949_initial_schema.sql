@@ -31,6 +31,7 @@ create table if not exists public.profiles (
   country text,
   gender text,
   avatar text,
+  cover_photo text,
   is_admin boolean default false
 );
 
