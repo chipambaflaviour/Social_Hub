@@ -34,8 +34,15 @@ export const useStore = create((set, get) => ({
   suggestions: [],
   events: [],
   groups: [],
+  notifications: [],
   isInitialized: false,
   darkMode: false,
+
+  markNotificationsRead: () => {
+    set((state) => ({
+      notifications: state.notifications.map((n) => ({ ...n, read: true })),
+    }));
+  },
 
   toggleDarkMode: () => {
     const { darkMode } = get();
@@ -121,6 +128,31 @@ export const useStore = create((set, get) => ({
     }
 
     set(finalState);
+
+    if (currentUserProfile) {
+      supabase
+        .channel("public:posts")
+        .on(
+          "postgres_changes",
+          { event: "INSERT", schema: "public", table: "posts" },
+          (payload) => {
+            const newPost = payload.new;
+            if (newPost.author?.name !== get().user?.name) {
+              const notif = {
+                id: newPost.id,
+                text: `${newPost.author?.name} published a new ${newPost.type === "announcement" ? "announcement" : "post"}.`,
+                time: "Just now",
+                read: false,
+              };
+              set((state) => ({
+                notifications: [notif, ...state.notifications],
+                posts: [mapPost(newPost), ...state.posts],
+              }));
+            }
+          }
+        )
+        .subscribe();
+    }
   },
   addEvent: async (eventData) => {
     const { data } = await supabase

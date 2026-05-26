@@ -10,7 +10,8 @@ export default function Navbar() {
 
   if (!user) return null;
 
-  const notifications = [];
+  const notifications = useStore((state) => state.notifications);
+  const markNotificationsRead = useStore((state) => state.markNotificationsRead);
 
   const links = [
     { to: "/", icon: "dynamic_feed", label: "Feed", mobileOnly: false },
@@ -103,7 +104,7 @@ export default function Navbar() {
               className="p-2 text-gray-500 hover:bg-gray-50 transition-colors duration-200 relative rounded-full"
             >
               <span className="material-symbols-outlined">notifications</span>
-              {notifications.length > 0 && (
+              {notifications.filter(n => !n.read).length > 0 && (
                 <span className="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
               )}
             </button>
@@ -114,8 +115,8 @@ export default function Navbar() {
                   <h3 className="font-headline-sm text-on-surface">
                     Notifications
                   </h3>
-                  {notifications.length > 0 && (
-                    <button className="text-primary font-label-sm hover:underline">
+                  {notifications.filter(n => !n.read).length > 0 && (
+                    <button onClick={markNotificationsRead} className="text-primary font-label-sm hover:underline">
                       Mark all as read
                     </button>
                   )}
