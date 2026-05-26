@@ -28,6 +28,7 @@ create table if not exists public.profiles (
   department text,
   email text,
   contact text,
+  country text,
   gender text,
   avatar text,
   is_admin boolean default false
