@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   useLocation,
+  Navigate,
 } from "react-router-dom";
 import { useStore } from "./store/useStore";
 import Navbar from "./components/Navbar";
@@ -16,6 +17,19 @@ const Events = lazy(() => import("./pages/Events"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Settings = lazy(() => import("./pages/Settings"));
 const Login = lazy(() => import("./pages/Login"));
+
+const ProtectedRoute = ({ children }) => {
+  const user = useStore((state) => state.user);
+  if (!user) return <Navigate to="/login" replace />;
+  return children;
+};
+
+const AdminRoute = ({ children }) => {
+  const user = useStore((state) => state.user);
+  if (!user) return <Navigate to="/login" replace />;
+  if (!user.isAdmin) return <Navigate to="/" replace />;
+  return children;
+};
 
 function AppLayout() {
   const location = useLocation();
@@ -31,8 +45,8 @@ function AppLayout() {
 
   if (!isInitialized) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background text-primary">
-        Loading...
+      <div className="min-h-screen flex flex-col items-center justify-center bg-background text-primary">
+        <div className="w-12 h-12 border-4 border-surface-container border-t-primary rounded-full animate-spin"></div>
       </div>
     );
   }
@@ -53,13 +67,13 @@ function AppLayout() {
         }
       >
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/network" element={<Network />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/network" element={<ProtectedRoute><Network /></ProtectedRoute>} />
+          <Route path="/events" element={<ProtectedRoute><Events /></ProtectedRoute>} />
+          <Route path="/admin" element={<AdminRoute><Admin /></AdminRoute>} />
+          <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>
