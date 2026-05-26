@@ -29,13 +29,7 @@ const mapFlagged = (f) => ({
 export const useStore = create((set, get) => ({
   posts: [],
   users: [],
-  user: {
-    name: "Alex Sterling",
-    role: "Senior Director, Strategy & Ops",
-    avatar:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDahWWM14DYAWB9zffH945GXDscRxLnYxzqKmaUOR4lqR1N6lpiu4gFP1rF9vkFBChSIvNhbeJ5K9evefxNPY0F6ZZRhLuZ3uv5dvMjrErT2P9lFR7DF3f3h-s43u1oVZwyuW2T2-EZYET7rduylNOf_xdMJ5E9d5tVlC-ntUQbuRg6CX8pvlkEIecX6c4UT0HIEftU8lHza93HUIqP_maNVC0ZeBiXXQYxc68apickIukk211034kz0_fmdmZBh1e8VKYQ-KFHbD0",
-    isAdmin: true,
-  },
+  user: null,
   flaggedContent: [],
   suggestions: [],
   events: [],
